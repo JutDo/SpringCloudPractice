@@ -1,5 +1,7 @@
 package com.plum.cloud.entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
@@ -7,7 +9,7 @@ import javax.persistence.*;
 /**
  * 表名：t_pay
  * 表注释：支付交易表
-*/
+ */
 @Table(name = "t_pay")
 public class Pay {
     @Id
@@ -18,18 +20,21 @@ public class Pay {
      * 支付流水号
      */
     @Column(name = "pay_no")
+    @Schema(title = "支付流水号")
     private String payNo;
 
     /**
      * 订单流水号
      */
     @Column(name = "order_no")
+    @Schema(title = "订单流水号")
     private String orderNo;
 
     /**
      * 用户账号ID
      */
     @Column(name = "user_id")
+    @Schema(title = "用户账号")
     private Integer userId;
 
     /**
