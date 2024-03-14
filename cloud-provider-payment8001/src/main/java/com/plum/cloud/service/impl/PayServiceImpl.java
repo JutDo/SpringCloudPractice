@@ -3,6 +3,7 @@ package com.plum.cloud.service.impl;
 import com.plum.cloud.entities.Pay;
 import com.plum.cloud.mapper.PayMapper;
 import com.plum.cloud.service.PayService;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @Service
 public class PayServiceImpl implements PayService {
-
+    @Resource
     private PayMapper payMapper;
 
     @Override
