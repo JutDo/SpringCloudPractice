@@ -1,8 +1,7 @@
 package com.plum.cloud.controller;
 
-import ch.qos.logback.classic.spi.EventArgUtil;
-import com.plum.cloud.dto.PayDTO;
 import com.plum.cloud.entities.Pay;
+import com.plum.cloud.entities.PayDTO;
 import com.plum.cloud.req.ResultData;
 import com.plum.cloud.service.PayService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,6 +9,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,10 +26,10 @@ import java.util.List;
 @Slf4j
 @Tag(name = "支付微服务模块",description = "支付CRUD")
 public class PayController {
+    @Value("${server.port}")
+    private String port;
     @Resource
-
     private PayService payService;
-
     @PostMapping("pay/add")
     @Operation(summary = "新增",description = "新增支付流水方法，json串参数")
     public ResultData<String> addPay(@RequestBody Pay pay) {
@@ -63,6 +63,10 @@ public class PayController {
     @GetMapping("/pay/get/all")
     public ResultData<List<Pay>> getALl() {
         return ResultData.success(payService.getAll());
+    }
+    @GetMapping(value = "/pay/get/info")
+    private String getInfoByConsul(@Value("${plum.zhuzhu}") String zhuzhu) {
+        return "zhuzhu: " + zhuzhu + "\t" + "port: " + port ;
     }
 
 

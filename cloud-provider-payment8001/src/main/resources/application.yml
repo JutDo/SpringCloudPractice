@@ -1,14 +1,29 @@
+
 spring:
   application:
-    name: springboot-init
+    name: cloud-payment-service
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
     password: wwximissyou
+  profiles:
+    active: dev # 多环境配置加载内容dev/prod,不写就是默认default配置
+      ####Spring Cloud Consul for Service Discovery
+    cloud:
+      consul:
+        host: localhost
+        port: 8500
+        discovery:
+          service-name: ${spring.application.name}
+
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.plum.cloud.entities
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080

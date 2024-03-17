@@ -1,4 +1,4 @@
-package com.plum.cloud.req;
+package com.plum.cloudconsumerorder80.req;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

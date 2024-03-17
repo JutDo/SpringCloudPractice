@@ -1,4 +1,4 @@
-package com.plum.cloud.req;
+package com.plum.cloud.resp;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

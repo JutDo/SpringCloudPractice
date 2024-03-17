@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main8002" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" singleton="false">
+    <option name="ENABLE_JMX_AGENT" value="false" />
+    <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+    <option name="INCLUDE_PROVIDED_SCOPE" value="false" />
+    <module name="cloud-provider-payment8001" />
+    <selectedOptions>
+      <option name="spring.boot.profiles" visible="false" />
+      <option name="environmentVariables" />
+    </selectedOptions>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.plum.cloud.Main8001" />
+    <option name="VM_PARAMETERS" value="-Dserver.port=8002" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
